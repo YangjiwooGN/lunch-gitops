@@ -9,6 +9,6 @@ resources:
   - frontend-svc.yaml
 images:
   - name: docker.io/yangjiwoogn/lunch-backend
-    newTag: becb820ce05c5b1785be7410e1ea0dcb81aa8267
+    newTag: 4fe424bd0e8aef79a2498b82a1fc0d0a54b88ee6
   - name: docker.io/yangjiwoogn/lunch-frontend
-    newTag: becb820ce05c5b1785be7410e1ea0dcb81aa8267
+    newTag: 4fe424bd0e8aef79a2498b82a1fc0d0a54b88ee6
