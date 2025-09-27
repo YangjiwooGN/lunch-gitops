@@ -9,7 +9,7 @@ resources:
   - frontend-svc.yaml
   - ingress.yaml
 images:
-  - name: docker.io/<YOUR_DH_USER>/lunch-backend
+  - name: docker.io/yangjiwoogn/lunch-backend
     newTag: latest
-  - name: docker.io/<YOUR_DH_USER>/lunch-frontend
+  - name: docker.io/yangjiwoogn/lunch-frontend
     newTag: latest

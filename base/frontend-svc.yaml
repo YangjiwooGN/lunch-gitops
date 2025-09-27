@@ -4,8 +4,10 @@ metadata:
   name: lunch-frontend
   namespace: lunch
 spec:
-  type: ClusterIP
+  type: NodePort
   selector: { app: lunch-frontend }
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 80
+      nodePort: 30030
