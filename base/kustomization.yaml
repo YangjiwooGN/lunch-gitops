@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: lunch
+resources:
+  - namespace.yaml
+  - backend-deploy.yaml
+  - backend-svc.yaml
+  - frontend-deploy.yaml
+  - frontend-svc.yaml
+  - ingress.yaml
+images:
+  - name: docker.io/<YOUR_DH_USER>/lunch-backend
+    newTag: latest
+  - name: docker.io/<YOUR_DH_USER>/lunch-frontend
+    newTag: latest

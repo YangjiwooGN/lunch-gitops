@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lunch-backend
+  namespace: lunch
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: lunch-backend }
+  template:
+    metadata:
+      labels: { app: lunch-backend }
+    spec:
+      containers:
+        - name: app
+          image: docker.io/yangjiwoogn/lunch-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports: [{ containerPort: 8080 }]
+          env:
+            - name: TZ
+              value: "Asia/Seoul"
+          resources:
+            requests: { cpu: "200m", memory: "512Mi" }
+            limits:   { cpu: "600m", memory: "1.5Gi" }
