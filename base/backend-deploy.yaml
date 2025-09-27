@@ -6,19 +6,35 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels: { app: lunch-backend }
+    matchLabels:
+      app: lunch-backend
   template:
     metadata:
-      labels: { app: lunch-backend }
+      labels:
+        app: lunch-backend
     spec:
       containers:
         - name: app
           image: docker.io/yangjiwoogn/lunch-backend:latest
           imagePullPolicy: IfNotPresent
-          ports: [{ containerPort: 8080 }]
+          ports:
+            - containerPort: 8080
           env:
             - name: TZ
               value: "Asia/Seoul"
           resources:
-            requests: { cpu: "200m", memory: "512Mi" }
-            limits:   { cpu: "600m", memory: "1.5Gi" }
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+              ephemeral-storage: "1Gi"   # ✅ 임시 저장 공간 요청
+            limits:
+              cpu: "600m"
+              memory: "1.5Gi"
+              ephemeral-storage: "2Gi"   # ✅ 임시 저장 공간 최대치
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp           # ✅ 크롬이 임시파일 저장할 공간 따로 확보
+      volumes:
+        - name: tmp
+          emptyDir:
+            sizeLimit: "2Gi"            # ✅ Pod 전용 임시 디스크 크기
