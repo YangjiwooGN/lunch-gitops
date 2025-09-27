@@ -10,6 +10,6 @@ resources:
   - ingress.yaml
 images:
   - name: docker.io/yangjiwoogn/lunch-backend
-    newTag: latest
+    newTag: b43a902dd24bd47be0d06d436b4c96fd80e06092
   - name: docker.io/yangjiwoogn/lunch-frontend
-    newTag: latest
+    newTag: b43a902dd24bd47be0d06d436b4c96fd80e06092
