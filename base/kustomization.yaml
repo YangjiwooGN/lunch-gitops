@@ -7,7 +7,6 @@ resources:
   - backend-svc.yaml
   - frontend-deploy.yaml
   - frontend-svc.yaml
-  - ingress.yaml
 images:
   - name: docker.io/yangjiwoogn/lunch-backend
     newTag: b43a902dd24bd47be0d06d436b4c96fd80e06092
