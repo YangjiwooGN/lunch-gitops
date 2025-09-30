@@ -11,6 +11,8 @@ spec:
     metadata:
       labels: { app: lunch-frontend }
     spec:
+      nodeSelector:
+        role: frontend
       containers:
         - name: web
           image: docker.io/yangjiwoogn/lunch-frontend:latest
